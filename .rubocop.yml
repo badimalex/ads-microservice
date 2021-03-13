@@ -1,0 +1,153 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+
+AllCops:
+  NewCops: enable
+  EnabledByDefault: true
+  TargetRubyVersion: 2.5.1
+
+Naming/MethodName:
+  Exclude:
+    - app/serializers/api/v1/**/*
+
+Style/ClassAndModuleChildren:
+  Enabled: true
+  EnforcedStyle: compact
+
+UnknownEnv:
+  Enabled: true
+  Environments:
+    - production
+    - development
+    - staging
+    - test
+
+Rails/FilePath:
+  Enabled: true
+  EnforcedStyle: arguments
+
+Layout/MultilineAssignmentLayout:
+  Enabled: true
+  EnforcedStyle: same_line
+
+Layout/LineLength:
+  Enabled: true
+  Max: 100
+
+# FALSE -------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------
+# Missing top-level module documentation comment
+Style/Documentation:
+  Enabled: false
+
+# Use only ascii symbols in comments
+Style/AsciiComments:
+  Enabled: false
+
+# Block has too many lines
+Metrics/BlockLength:
+  Enabled: false
+
+# Avoid using ... because it skips validations
+SkipsModelValidations:
+  Enabled: false
+
+# Controllers should subclass ApplicationController
+Rails/ApplicationController:
+  Enabled: false
+
+# ... is not explicitly defined on the ...
+Rails/LexicallyScopedActionFilter:
+  Enabled: false
+
+# Missing method documentation comment
+Style/DocumentationMethod:
+  Enabled: false
+
+# Include a copyright notice matching /^Copyright (\(c\) )?2[0-9]{3} .+/ before any code
+Style/Copyright:
+  Enabled: false
+
+# Each argument in a multi-line method call must start on a separate line
+Layout/MultilineMethodArgumentLineBreaks:
+  Enabled: false
+
+# Explicitly make ... public or private using either #public_constant or #private_constant
+Style/ConstantVisibility:
+  Enabled: false
+
+# ... returns a model which is always truthy
+Rails/SaveBang:
+  Enabled: false
+
+# Style/MissingElse
+Style/MissingElse:
+  Enabled: false
+
+# Avoid trailing inline comments
+Style/InlineComment:
+  Enabled: false
+
+# Each item in a multi-line array must start on a separate line
+Layout/MultilineArrayLineBreaks:
+  Enabled: false
+
+# protected_methods is supposed to appear before private_methods
+Layout/ClassStructure:
+  Enabled: false
+
+# Missing gem description comment
+Bundler/GemComment:
+  Enabled: false
+
+# Each key in a multi-line hash must start on a separate line
+Layout/MultilineHashKeyLineBreaks:
+  Enabled: false
+
+# Use tag instead of content_tag
+Rails/ContentTag:
+  Enabled: false
+
+# HOTFIX ------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------
+# Performance/OpenStruct
+Performance/OpenStruct:
+  Enabled: false
+
+# Object#__send__ or Object#public_send to send
+Style/Send:
+  Enabled: false
+
+# Replace unsafe number conversion with number class parsing
+Lint/NumberConversion:
+  Enabled: false
+
+# Avoid chaining a method call on a do...end block
+Style/MethodCalledOnDoEndBlock:
+  Enabled: false
+
+# Use parentheses for method calls with arguments
+Style/MethodCallWithArgsParentheses:
+  Enabled: false
+  EnforcedStyle: omit_parentheses
+  AllowParenthesesInMultilineCall: true
+
+# Prefer keyword arguments to options hashes
+Style/OptionHash:
+  Enabled: false
+
+# Use unchained map! and compact!
+Performance/ChainArrayAllocation:
+  Enabled: false
+
+# Prefer symbols instead of strings as hash keys
+Style/StringHashKeys:
+  Enabled: false
+
+# Comment to disable/enable RuboCop
+Style/DisableCopsWithinSourceCodeDirective:
+  Enabled: false
+
+# bundle exec rubocop --auto-correct --only Layout/TrailingWhitespace
+# bundle exec rubocop --auto-correct --only EmptyLineAfterMagicComment
