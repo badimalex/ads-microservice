@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-configure do
-  # todo
+configure :development do
+  set :show_exceptions, true
 end
