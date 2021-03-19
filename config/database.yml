@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  host:     localhost
+  database: service-ads
+  username:
+  password:
+  template: template0
