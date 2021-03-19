@@ -19,10 +19,12 @@ GEM
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
     ast (2.4.2)
+    bcrypt (3.1.16)
     bond (0.5.1)
     builder (3.2.4)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
+    dry-initializer (3.0.4)
     erubi (1.10.0)
     fast_jsonapi (1.5)
       activesupport (>= 4.2)
@@ -107,8 +109,6 @@ GEM
     sinatra-activerecord (2.0.22)
       activerecord (>= 4.1)
       sinatra (>= 1.0)
-    sinatra-url-for (0.2.2.1)
-      sinatra (>= 0.9.1.1)
     tilt (2.0.10)
     tux (0.3.0)
       ripl (>= 0.3.5)
@@ -125,6 +125,8 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  bcrypt (~> 3.1.7)
+  dry-initializer (~> 3.0.3)
   fast_jsonapi (~> 1.5)
   kaminari
   pg
@@ -135,7 +137,6 @@ DEPENDENCIES
   rubocop-rake (~> 0.5.1)
   sinatra (~> 2.1)
   sinatra-activerecord
-  sinatra-url-for (~> 0.2.2)
   tux
 
 BUNDLED WITH

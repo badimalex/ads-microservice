@@ -10,6 +10,8 @@ gem 'rake'
 gem 'sinatra', '~> 2.1'
 gem 'sinatra-activerecord'
 
+gem 'bcrypt', '~> 3.1.7'
+
 group :development do
   gem 'rubocop', '~> 1.11'
   gem 'rubocop-performance', '~> 1.10'
