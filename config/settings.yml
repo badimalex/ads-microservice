@@ -1,0 +1,7 @@
+db:
+  adapter: postgresql
+  host: localhost
+  user: dmitriybadichan
+  password: 123
+pagination:
+  page_size: 10
