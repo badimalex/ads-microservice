@@ -108,17 +108,17 @@ PLATFORMS
 DEPENDENCIES
   activesupport (~> 6.1)
   config (~> 3.0)
-  database_cleaner-sequel (~> 2.0)
+  database_cleaner-sequel
   dry-initializer (~> 3.0)
   dry-validation (~> 1.6)
-  factory_bot (~> 6.1)
+  factory_bot
   fast_jsonapi (~> 1.5)
   i18n (~> 1.8)
   pg (~> 1.2)
   puma (~> 5.2)
-  rack-test (~> 1.1)
+  rack-test
   rake (~> 13.0)
-  rspec (~> 3.10)
+  rspec
   sequel (~> 5.42)
   sinatra (~> 2.1)
   sinatra-contrib (~> 2.1)
