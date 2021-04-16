@@ -12,6 +12,7 @@ gem "dry-initializer", "~> 3.0"
 gem "dry-validation", "~> 1.6"
 gem "activesupport", "~> 6.1"
 gem "fast_jsonapi", "~> 1.5"
+gem 'faraday'
 
 group :test do
   gem 'factory_bot'
@@ -19,3 +20,5 @@ group :test do
   gem 'rspec'
   gem 'database_cleaner-sequel'
 end
+
+gem "faraday_middleware", "~> 1.0"
