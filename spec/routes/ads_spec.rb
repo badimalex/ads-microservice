@@ -16,8 +16,13 @@ RSpec.describe AdRoutes, type: :routes do
   describe 'POST /ads/v1' do
     let(:user_id) { 101 }
     let(:auth_token) { 'auth.token' }
+    let(:coordinates) { { 'lat' => 123, 'lon' => 456 } }
     let(:auth_service) {
       instance_double('Authservice')
+    }
+
+    let(:geo_service) {
+      instance_double('Geoservice')
     }
 
     before do
@@ -28,6 +33,13 @@ RSpec.describe AdRoutes, type: :routes do
       allow(AuthService::Client).to receive(:new).and_return(auth_service)
 
       header 'Authorization', "Bearer #{auth_token}"
+    end
+
+    before do
+      allow(geo_service).to receive(:geocode)
+        .and_return(coordinates)
+
+      allow(GeoService::Client).to receive(:new).and_return(geo_service)
     end
 
     context 'missing parameters' do
@@ -87,6 +99,11 @@ RSpec.describe AdRoutes, type: :routes do
         expect(response_body['data']).to a_hash_including(
           'id' => last_ad.id.to_s,
           'type' => 'ad'
+        )
+
+        expect(response_body['data']['attributes']).to a_hash_including(
+          'lat' => 123.0,
+          'lon' => 456.0
         )
       end
     end
