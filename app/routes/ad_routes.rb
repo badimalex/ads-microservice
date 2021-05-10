@@ -1,5 +1,5 @@
 class AdRoutes < Application
-  helpers PaginationLinks, Auth, Geocoder
+  helpers PaginationLinks, Auth
 
   namespace '/v1' do
     get do
@@ -12,13 +12,32 @@ class AdRoutes < Application
       json serializer.serializable_hash
     end
 
+    post '/update_coordinates' do
+      ad_params = validate_with!(CoordinatesParamsContract)
+
+      result = Ads::UpdateService.call(
+        ad_params[:id],
+        lat: ad_params[:lat],
+        lon: ad_params[:lon],
+      )
+
+      if result.success?
+        serializer = AdSerializer.new(result.ad)
+
+        status 201
+        json serializer.serializable_hash
+      else
+        status 422
+        error_response result.ad
+      end
+    end
+
     post do
       ad_params = validate_with!(AdParamsContract)
 
       result = Ads::CreateService.call(
         ad: ad_params[:ad],
         user_id: user_id,
-        coordinates: coordinates
       )
 
       if result.success?
