@@ -7,6 +7,9 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    amq-protocol (2.3.2)
+    bunny (2.15.0)
+      amq-protocol (~> 2.3, >= 2.3.1)
     concurrent-ruby (1.1.8)
     config (3.0.0)
       deep_merge (~> 1.2, >= 1.2.1)
@@ -112,6 +115,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport (~> 6.1)
+  bunny (~> 2.15.0)
   config (~> 3.0)
   database_cleaner-sequel
   dry-initializer (~> 3.0)

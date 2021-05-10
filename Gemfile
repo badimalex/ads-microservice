@@ -13,6 +13,7 @@ gem "dry-validation", "~> 1.6"
 gem "activesupport", "~> 6.1"
 gem "fast_jsonapi", "~> 1.5"
 gem 'faraday'
+gem "bunny", "~> 2.15.0"
 
 group :test do
   gem 'factory_bot'
