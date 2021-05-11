@@ -14,6 +14,8 @@ gem "activesupport", "~> 6.1"
 gem "fast_jsonapi", "~> 1.5"
 gem 'faraday'
 gem "bunny", "~> 2.15.0"
+gem "rack-ougai", "~> 0.2.1"
+gem "rack-request-id", "~> 0.0.4"
 
 group :test do
   gem 'factory_bot'
@@ -23,3 +25,5 @@ group :test do
 end
 
 gem "faraday_middleware", "~> 1.0"
+
+gem "amazing_print", "~> 1.3"
