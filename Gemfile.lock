@@ -7,6 +7,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    amazing_print (1.3.0)
     amq-protocol (2.3.2)
     bunny (2.15.0)
       amq-protocol (~> 2.3, >= 2.3.1)
@@ -70,12 +71,19 @@ GEM
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.5.7)
+    oj (3.11.5)
+    ougai (1.9.1)
+      oj (~> 3.10)
     pg (1.2.3)
     puma (5.2.2)
       nio4r (~> 2.0)
     rack (2.2.3)
+    rack-ougai (0.2.1)
+      ougai (~> 1.5)
+      rack (~> 2.0)
     rack-protection (2.1.0)
       rack
+    rack-request-id (0.0.4)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rake (13.0.3)
@@ -115,6 +123,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport (~> 6.1)
+  amazing_print (~> 1.3)
   bunny (~> 2.15.0)
   config (~> 3.0)
   database_cleaner-sequel
@@ -127,6 +136,8 @@ DEPENDENCIES
   i18n (~> 1.8)
   pg (~> 1.2)
   puma (~> 5.2)
+  rack-ougai (~> 0.2.1)
+  rack-request-id (~> 0.0.4)
   rack-test
   rake (~> 13.0)
   rspec
