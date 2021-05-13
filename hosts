@@ -1,0 +1,7 @@
+[app]
+
+167.99.59.48
+
+[all:vars]
+
+ansible_user=root
