@@ -16,6 +16,7 @@ gem 'faraday'
 gem "bunny", "~> 2.15.0"
 gem "rack-ougai", "~> 0.2.1"
 gem "rack-request-id", "~> 0.0.4"
+gem "prometheus-client", "~> 2.1.0"
 
 group :test do
   gem 'factory_bot'
